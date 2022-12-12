@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  server:
+    build: ./server
+    image: 22light_server:latest
+    container_name: 22light_server
+    restart: always
+    # ports:
+    #   - "8080:8080"
+    network_mode: host
+
+  client:
+    build: ./client
+    image: 22light_client:latest
+    container_name: 22light_client
+    restart: always
+    # ports:
+    #   - "3000:3000"
+    network_mode: host
